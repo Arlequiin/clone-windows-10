@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Windows</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="images/assets/windows.png">
+</head>
+
+<body id="body" onclick="start()">
+  <style>
+    body {
+      background-image: url('images/bg/bg.png');
+    }
+    p {
+      text-shadow: 5px 5px 10px black;
+    }
+
+  </style>
+<!--background:rgba(50,149,210,0.5);border: 2px solid #1e7bc2;-->
+<div style="width:70px;">
+  <div style="position:relative">
+  <center><img src="images/assets/this-pc.png" class="desktop-icon-img"></center>
+  <img src="images/assets/arrow.png" style="position:absolute;height:16px;width:auto;top:80%;left:30%;transform:translate(-50%,-50%);">
+</div>
+  <center><p>Ce PC</p></center>
+</div>
+<div style="width:70px;">
+  <div style="position:relative">
+  <center><img src="images/assets/chrome.png" class="desktop-icon-img"></center>
+  <img src="images/assets/arrow.png" style="position:absolute;height:16px;width:auto;top:80%;left:30%;transform:translate(-50%,-50%);">
+</div>
+  <center><p>Google Chrome</p></center>
+</div>
+<div style="width:70px;">
+  <div style="position:relative">
+  <center><img src="images/assets/edge.png" class="desktop-icon-img"></center>
+  <img src="images/assets/arrow.png" style="position:absolute;height:16px;width:auto;top:80%;left:30%;transform:translate(-50%,-50%);">
+</div>
+  <center><p>Microsoft Edge</p></center>
+</div>
+
+<div style="width:70px;" id="not">
+  <div style="position:relative">
+  <center><img src="images/assets/notepad.png" class="desktop-icon-img"></center>
+  <img src="images/assets/arrow.png" style="position:absolute;height:16px;width:auto;top:80%;left:30%;transform:translate(-50%,-50%);">
+</div>
+  <center><p>Bloc-Notes</p></center>
+</div>
+<div style="width:70px;">
+  <div style="position:relative">
+  <center><img src="images/assets/corbeille.png" class="desktop-icon-img"></center>
+  <img src="images/assets/arrow.png" style="position:absolute;height:16px;width:auto;top:80%;left:30%;transform:translate(-50%,-50%);">
+</div>
+  <center><p>Corbeille</p></center>
+</div>
+<div class="center-box" id="alert" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:auto;">
+    <a style="margin-left:10px;">Information système</a> <a style="float:right;margin-left:20px;"><img src="images/assets/x.png"></a><br><br>
+    <div>
+    <center><img src="images/assets/skull.png" width=50 height=auto></center><br><a>Danger ! Votre ordinateur est infecté par le virus <em>hacktivisme.vb</em> ! Le risque est très élevé veuillez contacter un expert immédiatement.</a><br>Contact : <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;to=benchekroun.badr@lycee-descartes.ma&amp;subject=Hello" target="_blank">benchekroun.badr@lycee-descartes.ma</a>
+    </div><br>
+  </div>
+</div>
+<div class="center-box" id="alert2" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:auto;">
+    <a style="margin-left:10px;">Information système</a> <a style="float:right;margin-left:20px;"><img src="images/assets/x.png"></a><br><br>
+    <div>
+    Je suis un défenseur de la liberté de la presse, de la vie privée et de la liberté d'expression, et je continuerai à me battre pour ces valeurs, même dans des circonstances difficiles. Je crois que la vérité doit être mise en lumière, même si cela peut être inconfortable pour certains.<br>Cela laisse entendre que je ne m'attaque pas à votre ordinateur, je diffuse simplement des idées. Cliquez sur le bouton ci-dessous pour supprimer le virus.
+      <a href="index.html" style="border: 2px solid white;">Supprimer hacktivisme.vb</a>
+    </div><br>
+  </div>
+</div>
+<div class="center-box" id="notepad" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:250px;">
+    <img src="images/assets/notepad.png" width="auto" height="20px"><a style="margin-left:10px;">Sans Titre* - Bloc-Notes</a> <a style="float:right;margin-left:20px;"><img src="images/assets/-ox.png" width="auto" height="30px"></a><br><br>
+    Fichier &nbsp;&nbsp;Édition &nbsp;&nbsp;Format &nbsp;&nbsp;Affichage &nbsp;&nbsp;Aide
+    <hr>
+    <div id="txt" style="height:140px">
+    
+    </div>
+    
+  </div>
+</div>
+<div class="center-box" id="cmd" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:auto;float:right;">
+    <img src="images/assets/cmd.png" width="auto" height="20px"><a style="margin-left:10px;">Command Prompt</a> <a style="float:right;margin-left:20px;"><img src="images/assets/-ox.png" width="auto" height="30px"></a><br>
+    <div id="txt2" style="height:200px;background-color: black;color:white;font-family: monospace;">
+    Microsoft Windows Version [10.0.102401]<br>&copy; 2015 Microsoft Corporation
+All rights reserved.<br>
+      C\:Users\User>
+    </div>
+    
+  </div>
+</div>
+
+<div id="photo" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:400px;height:auto;z-index:5;margin-bottom: 10%">
+    <img src="images/assets/photos.png" width="auto" height="20px"><a style="margin-left:10px;">Photos</a> <a style="float:right;margin-left:20px;"><img src="images/assets/-ox.png" width="auto" height="30px"></a><br>
+    <div style="background-color: black;">
+    <img src="images/pictures/julien.png" style="max-width: 200px;max-height:auto;">
+    </div>
+    
+  </div>
+</div>
+<div class="center-box" id="notepad2" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:250px;margin-bottom: 10%;">
+    <img src="images/assets/notepad.png" width="auto" height="20px"><a style="margin-left:10px;">Fin - Bloc-Notes</a> <a style="float:right;margin-left:20px;"><img src="images/assets/-ox.png" width="auto" height="30px"></a><br><br>
+    Fichier &nbsp;&nbsp;Édition &nbsp;&nbsp;Format &nbsp;&nbsp;Affichage &nbsp;&nbsp;Aide
+    <hr>
+    <div style="height:400px">
+    En 2010, WikiLeaks a publié des milliers de documents diplomatiques américains, ce qui a provoqué une réaction massive de la part du gouvernement américain. Depuis lors, j'ai été la cible de poursuites judiciaires et j'ai vécu dans l'ambassade de l'Équateur à Londres pendant sept ans pour éviter d'être extradé aux États-Unis. En 2019, j'ai été arrêté et incarcéré en Grande-Bretagne, où je suis toujours en attente d'extradition.
+    </div>
+    
+  </div>
+</div>
+<div class="dock">
+  <div style="margin-left:20px;">
+  <img src="images/assets/windows.png" alt="Démarrer" class="app-dock">
+  <img src="images/assets/cortana.png" class="app-dock">
+  <img src="images/assets/desktop.png" class="app-dock">
+  <img src="images/assets/file.png" class="app-dock">
+  <img src="images/assets/edge.png" class="app-dock">
+  <img src="images/assets/store.png" class="app-dock">
+  <img src="images/assets/outlook.png" class="app-dock">
+    <img src="images/assets/chrome.png" class="app-dock">
+  </div>
+</div>
+</body>
+<script>
+  function wait(){
+    console.log("waited")
+  }
+  function start(){
+    document.body.removeAttribute("onclick");
+    al = document.getElementById("alert");
+    al.style.display = 'flex';
+    note = document.getElementById("not");
+    setTimeout(() => {
+  note.style.background="rgba(50,149,210,0.5)";
+    note.style.border="border: 2px solid #1e7bc2;";
+}, 500);
+    app = document.getElementById("notepad");
+    setTimeout(() => {
+  app.style.display = 'block';
+}, 500);
+    progress_txt=document.getElementById("txt");
+    let desiredText = "Bonjour, je suis Julian Assange, un journaliste, informaticien et activiste. J'ai fondé WikiLeaks en 2006, une organisation internationale qui publie des documents confidentiels et des informations sensibles sur les gouvernements et les entreprises du monde entier. Mon travail a souvent été controversé, mais je crois que la transparence est essentielle pour la démocratie et la protection des droits humains.";
+    let n = desiredText.length;
+let currentIndex = 0;
+
+let typingInterval = setInterval(() => {
+  let currentChar = desiredText[currentIndex];
+  progress_txt.innerHTML += currentChar;
+  currentIndex++;
+
+  if (currentIndex >= desiredText.length) {
+    clearInterval(typingInterval);
+  }
+}, 30);
+
+for (let i = 0; i < desiredText.length; i++) {
+  let currentChar = desiredText[i];
+}
+setTimeout(() => {
+  cmd()
+}, n*30+20);
+  }
+
+  function cmd(){
+  cmd = document.getElementById("cmd");;
+cmd.style.display = 'block';
+    progress_txt=document.getElementById("txt2");
+    desiredText = `reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d  hacktiviste/matrix_rain.png /f"`;
+    n = desiredText.length;
+currentIndex = 0;
+
+typingInterval = setInterval(() => {
+  let currentChar = desiredText[currentIndex];
+  progress_txt.innerHTML += currentChar;
+  currentIndex++;
+
+  if (currentIndex >= desiredText.length) {
+    clearInterval(typingInterval);
+  }
+}, 30);
+
+for (let i = 0; i < desiredText.length; i++) {
+  let currentChar = desiredText[i];
+}
+
+document.body.style.backgroundImage = "url(images/bg/matrix_rain.png)";
+    setTimeout(() => {
+  photo()
+}, desiredText.length*30+20);
+  }
+
+  function photo(){
+    photo = document.getElementById("photo");;
+photo.style.display = 'block';
+    setTimeout(() => {
+  notepad2()
+}, 100);
+  }
+
+  function notepad2(){
+    notepad2 = document.getElementById("notepad2");;
+notepad2.style.display = 'block';
+    al = document.getElementById("alert");
+    al.style.display = 'none';
+    al = document.getElementById("alert2");
+    al.style.display = 'flex';
+    
+  }
+</script>
+</html>
