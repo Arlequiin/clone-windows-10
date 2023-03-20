@@ -93,4 +93,12 @@ body {
   height:auto;
 }
 
+#drag {
+  position: absolute;
+  z-index: 9;
+}
 
+#dragheader {
+  cursor: move;
+  z-index: 10;
+}

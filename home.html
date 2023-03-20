@@ -68,8 +68,9 @@
   <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:auto;">
     <a style="margin-left:10px;">Information système</a> <a style="float:right;margin-left:20px;"><img src="images/assets/x.png"></a><br><br>
     <div>
-    Je suis un défenseur de la liberté de la presse, de la vie privée et de la liberté d'expression, et je continuerai à me battre pour ces valeurs, même dans des circonstances difficiles. Je crois que la vérité doit être mise en lumière, même si cela peut être inconfortable pour certains.<br>Cela laisse entendre que je ne m'attaque pas à votre ordinateur, je diffuse simplement des idées. Cliquez sur le bouton ci-dessous pour supprimer le virus.
-      <a href="index.html" style="border: 2px solid white;">Supprimer hacktivisme.vb</a>
+    Je suis un défenseur de la liberté de la presse, de la vie privée et de la liberté d'expression, et je continuerai à me battre pour ces valeurs, même dans des circonstances difficiles. Je crois que la vérité doit être mise en lumière, même si cela peut être inconfortable pour certains.<br>Cela laisse entendre que je ne m'attaque pas à votre ordinateur, je diffuse simplement des idées. Cliquez sur le bouton ci-dessous pour supprimer le virus.<br>
+      <button onclick="window.location.href='home-windows.html';">Supprimer <em>hacktivisme.vb*</em></button>
+
     </div><br>
   </div>
 </div>
@@ -105,8 +106,8 @@ All rights reserved.<br>
     
   </div>
 </div>
-<div class="center-box" id="notepad2" style="display:none;">
-  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:250px;margin-bottom: 10%;">
+<div id="notepad2" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:250px;margin-bottom: 10%;position:fixed;bottom:0;right: 0;">
     <img src="images/assets/notepad.png" width="auto" height="20px"><a style="margin-left:10px;">Fin - Bloc-Notes</a> <a style="float:right;margin-left:20px;"><img src="images/assets/-ox.png" width="auto" height="30px"></a><br><br>
     Fichier &nbsp;&nbsp;Édition &nbsp;&nbsp;Format &nbsp;&nbsp;Affichage &nbsp;&nbsp;Aide
     <hr>
@@ -207,7 +208,7 @@ photo.style.display = 'block';
 
   function notepad2(){
     notepad2 = document.getElementById("notepad2");;
-notepad2.style.display = 'block';
+    notepad2.style.display = 'block';
     al = document.getElementById("alert");
     al.style.display = 'none';
     al = document.getElementById("alert2");
