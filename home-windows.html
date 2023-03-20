@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html>
 
 <head>
@@ -13,6 +13,7 @@
   <style>
     body {
       background-image: url('images/bg/bg.png');
+      transition-duration: 0.2;
     }
     p {
       text-shadow: 5px 5px 10px black;
@@ -123,7 +124,7 @@
 </div>
 
 <div class="center-box" id="edgeapp" style="display:none;" id="drag">
-  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:90%;height:70%;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:70%;height:50%;">
     <div id="dragheader"><img src="images/assets/edge.png" width="auto" height="20px"><a style="margin-left:10px;">Microsoft Edge</a> <a style="float:right;margin-left:20px;" onclick="closeapp('edgeapp')"><img src="images/assets/-ox.png" width="auto" height="30px"></a></div><br><br>
     <hr>
     <iframe src="https://www.bing.com" width="100%" height="100%"></iframe>
@@ -144,6 +145,15 @@ All rights reserved.<br>
   </div>
 </div>
 
+<div class="center-box" id="alert" style="display:none;">
+  <div style="background-color: #1883d7;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:auto;color:white;font-size:150%;padding:20px;">
+    <a style="margin-left:10px;">Voulez-vous redémarrer l'ordinateur ?</a><br>
+    <div><br>
+      <button class="win10-login-btn" onclick="window.location.reload();">Confirmer</button>&nbsp;<button class="win10-login-btn" onclick="alertwindows()">Annuler</button>
+    </div><br>
+  </div>
+</div>
+
 <div id="photo" style="display:none;">
   <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:400px;height:auto;z-index:5;margin-bottom: 10%">
     <img src="images/assets/photos.png" width="auto" height="20px"><a style="margin-left:10px;">Photos</a> <a style="float:right;margin-left:20px;"><img src="images/assets/-ox.png" width="auto" height="30px"></a><br>
@@ -153,10 +163,10 @@ All rights reserved.<br>
     
   </div>
 </div>
-
+<a onclick="alertwindows()"><img id="start" src="images/pictures/start.png" style="height:0%;left:0;margin-bottom:4%;margin-left:0;transition: height 0.1s ease-in-out;" class="down"></a>
 <div class="dock">
   <div style="margin-left:20px;width:96%;">
-  <img src="images/assets/windows.png" alt="Démarrer" class="app-dock">
+  <img src="images/assets/windows.png" alt="Démarrer" class="app-dock" onclick="startmenu()">
   <img src="images/assets/cortana.png" class="app-dock">
   <img src="images/assets/desktop.png" class="app-dock">
   <img src="images/assets/file.png" class="app-dock">
@@ -210,43 +220,117 @@ dragElement(document.getElementById("storeapp"));
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
   }
 
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
-    // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
   }
 
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
-    // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
   }
 
   function closeDragElement() {
-    // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
   }
 }
 
+function startmenu(){
+  el=document.getElementById("start");
+  if (el.style.height == "0%"){
+  el.style.height="70%";
+  } else {
+    el.style.height="0%";
+  }
+}
+
+function alertwindows(){
+  el=document.getElementById("alert");
+  if (el.style.display == "none"){
+  el.style.height="flex";
+  } else {
+    el.style.height="none";
+  }
+}
+
+dragElement(document.getElementById("notapp"));
+dragElement(document.getElementById("chromeapp"));
+dragElement(document.getElementById("cmdapp"));
+dragElement(document.getElementById("edgeapp"));
+dragElement(document.getElementById("trashapp"));
+dragElement(document.getElementById("mgbaapp"));
+dragElement(document.getElementById("mailapp"));
+dragElement(document.getElementById("storeapp"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+function startmenu(){
+  el=document.getElementById("start");
+  if (el.style.height == "0%"){
+  el.style.height="70%";
+  } else {
+    el.style.height="0%";
+  }
+}
+
+function alertwindows(){
+  console.log("ALERT WINDOWS")
+  el=document.getElementById("alert");
+  console.log(el.style.display)
+  if (el.style.display != "none"){
+  el.style.display="none";
+  } else {
+    console.log("switch to flex")
+    el.style.display="flex";
+  }
+}
 </script>
 </html>
