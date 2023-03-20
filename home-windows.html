@@ -56,6 +56,13 @@
 </div>
   <center><p>Command Prompt</p></center>
 </div>
+<div style="width:70px;" id="mgba" onclick="hover('mgba')">
+  <div style="position:relative">
+  <center><img src="images/assets/mgba.png" class="desktop-icon-img"></center>
+  <img src="images/assets/arrow.png" style="position:absolute;height:16px;width:auto;top:80%;left:30%;transform:translate(-50%,-50%);">
+</div>
+  <center><p>mGBA</p></center>
+</div>
 <div style="width:70px;" onclick="hover('trash')" id="trash">
   <div style="position:relative">
   <center><img src="images/assets/corbeille.png" class="desktop-icon-img"></center>
@@ -66,8 +73,8 @@
 
 
 <div class="center-box" id="notapp" style="display:none;">
-  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:50%;height:40%;">
-    <div id="dragheader"><img src="images/assets/notepad.png" width="auto" height="20px"><a style="margin-left:10px;">Sans Titre* - Bloc-Notes</a> <a style="float:right;margin-left:20px;" onclick="closeapp('notapp')"><img src="images/assets/-ox.png" width="auto" height="30px"></a></div><br><br>
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:50%;height:40%;" id="drag">
+    <div id="notappheader"><img src="images/assets/notepad.png" width="auto" height="20px"><a style="margin-left:10px;">Sans Titre* - Bloc-Notes</a> <a style="float:right;margin-left:20px;" onclick="closeapp('notapp')"><img src="images/assets/-ox.png" width="auto" height="30px"></a></div><br><br>
     Fichier &nbsp;&nbsp;Édition &nbsp;&nbsp;Format &nbsp;&nbsp;Affichage &nbsp;&nbsp;Aide
     <hr>
     <textarea style="border: none; padding: 5px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; line-height: 1.5; background-color: #FFF; color: #000; resize: none; width: 95%; height: 70%; outline: none;"></textarea>
@@ -75,11 +82,41 @@
   </div>
 </div>
 
+<div class="center-box" id="mgbaapp" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:30%;height:40%;">
+    <div id="mgbaappheader"><img src="images/assets/mgba.png" width="auto" height="20px"><a style="margin-left:10px;">mGBA - POKEMON EMER - 0.10.0</a> <a style="float:right;margin-left:20px;" onclick="closeapp('mgbaapp')"><img src="images/assets/-ox.png" width="auto" height="30px"></a></div><br><br>
+    Fichier &nbsp;&nbsp;Édition &nbsp;&nbsp;Format &nbsp;&nbsp;Affichage &nbsp;&nbsp;Aide
+    <hr>
+    <iframe src="https://resurrection.arlequiin.repl.co" width="100%" height="100%"></iframe>
+  </div>
+</div>
+
+
 <div class="center-box" id="chromeapp" style="display:none;" id="drag">
   <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:60%;height:50%;">
     <div id="dragheader"><img src="images/assets/chrome.png" width="auto" height="20px"><a style="margin-left:10px;">Google Chrome</a> <a style="float:right;margin-left:20px;" onclick="closeapp('chromeapp')"><img src="images/assets/-ox.png" width="auto" height="30px"></a></div><br><br>
     <hr>
     <iframe src="https://gprivate.com" width="100%" height="100%"></iframe>
+
+    
+  </div>
+</div>
+
+<div class="center-box" id="mailapp" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:60%;height:50%;">
+    <div id="dragheader"><img src="images/assets/outlook.png" width="auto" height="20px"><a style="margin-left:10px;">Outlook</a> <a style="float:right;margin-left:20px;" onclick="closeapp('mailapp')"><img src="images/assets/-ox.png" width="auto" height="30px"></a></div><br><br>
+    <hr>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;to=benchekroun.badr@lycee-descartes.ma&amp;subject=Bonjour" target=_blank><img src="images/pictures/mails.png" width="100%" height='90%'></a>
+
+    
+  </div>
+</div>
+
+<div class="center-box" id="storeapp" style="display:none;">
+  <div style="background-color: white;border: 1px solid #1883d7;color: black;padding:2px;width:60%;height:50%;">
+    <div id="dragheader"><img src="images/assets/store.png" width="auto" height="20px"><a style="margin-left:10px;">Microsoft Store</a> <a style="float:right;margin-left:20px;" onclick="closeapp('storeapp')"><img src="images/assets/-ox.png" width="auto" height="30px"></a></div><br><br>
+    <hr>
+    <iframe src="https://apps.microsoft.com/store/apps" width="100%" height="100%"></iframe>
 
     
   </div>
@@ -123,17 +160,17 @@ All rights reserved.<br>
   <img src="images/assets/cortana.png" class="app-dock">
   <img src="images/assets/desktop.png" class="app-dock">
   <img src="images/assets/file.png" class="app-dock">
-  <img src="images/assets/edge.png" class="app-dock">
-  <img src="images/assets/store.png" class="app-dock">
-  <img src="images/assets/outlook.png" class="app-dock">
-    <img src="images/assets/chrome.png" class="app-dock">
+  <img src="images/assets/edge.png" class="app-dock" id="edge" class="app-dock" onclick="hover('edge')">
+  <img src="images/assets/store.png" class="app-dock" id="store" class="app-dock" onclick="hover('store')">
+  <img src="images/assets/outlook.png" id="mail" class="app-dock" onclick="hover('mail')">
+    <img src="images/assets/chrome.png" id="chrome" class="app-dock" onclick="hover('chrome')">
   </div>
 </div>
 </body>
 <script>
 function hover(id){
   elem=document.getElementById(id);
-  let ids = ["CePC","chrome","edge","not","cmd","trash"];
+  let ids = ["CePC","chrome","edge","not","cmd","trash","mgba","mail","store"];
   let index = ids.indexOf(id);
   if (index > -1) {
     ids.splice(index, 1);
@@ -162,6 +199,9 @@ dragElement(document.getElementById("chromeapp"));
 dragElement(document.getElementById("cmdapp"));
 dragElement(document.getElementById("edgeapp"));
 dragElement(document.getElementById("trashapp"));
+dragElement(document.getElementById("mgbaapp"));
+dragElement(document.getElementById("mailapp"));
+dragElement(document.getElementById("storeapp"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
